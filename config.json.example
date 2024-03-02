@@ -1,0 +1,5 @@
+{
+    "mc_host": "xxxxx.xxx.xxx:25565",
+    "password": "xxxxxxxxxxxxxxx",
+    "rcon_host": "http://127.0.0.1:10001"
+}

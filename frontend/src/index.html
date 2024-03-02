@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN" class="mdui-theme-auto">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" />
+  <meta name="renderer" content="webkit" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <link rel="stylesheet" href="main.css">
+  <script type="module" src="main.js"></script>
+  <title>MC监控台</title>
+</head>
+
+<body>
+  <main class="mdui-prose center">
+    <h1>MC状态监测-No-Flesh-Within-Chest(脆骨症)</h1>
+    <mdui-text-field autocomplete="on" readonly rows="5" id="server-status" helper="如果延迟等于10000，且下面图表是一条直线那大概率是服务器中断了"></mdui-text-field>
+    <canvas id="latency-chart"></canvas>
+
+    <mdui-button id="restart-server-btn">重启服务器</mdui-button>
+    <p>©BobMaster 2024</p>
+
+  </main>
+</body>
+
+</html>
