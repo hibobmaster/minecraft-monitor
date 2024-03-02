@@ -43,7 +43,7 @@ let chart = new Chart(
 const restartBtn = document.getElementById("restart-server-btn")
 
 window.onload = function () {
-	fetch('http://127.0.0.1:10000/')
+	fetch('/api')
 		.then(response => response.json())
 		.then(data => {
 			let compose_string = "";
@@ -59,7 +59,7 @@ window.onload = function () {
 			console.log(error);
 		});
 
-	fetch('http://127.0.0.1:10000/get_latency')
+	fetch('/api/get_latency')
 		.then(response => response.json())
 		.then(data => {
 			for (let i = 0; i < data.length; i = i + 2) {
@@ -72,10 +72,10 @@ window.onload = function () {
 
 	setInterval(function () {
 
-		fetch('http://127.0.0.1:10000')
+		fetch('/api')
 			.then(response => response.json())
 			.then(data => {
-				compose_string = "";
+				let compose_string = "";
 				compose_string += "当前时间: " + data.time;
 				compose_string += "\n服务器描述: " + data.description;
 				compose_string += "\n延迟: " + data.latency + "ms";
@@ -106,7 +106,7 @@ restartBtn.addEventListener("click", () => {
 		onConfirm: (value) => {
 			restartBtn.disabled = true;
 			restartBtn.loading = true;
-			fetch("http://127.0.0.1:10000/restart-server", {
+			fetch("/api/restart-server", {
 				method: "POST",
 				headers: {
 					"Accept": "application/json",
